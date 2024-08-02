@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpSpeed = 7f;
 
+
+    public int playerHealth;
+    
     public bool playerIsGrounded;
     public LayerMask whatIsGround;
     public Vector2 groundBoxSize = new Vector2(0.8f,0.2f);
