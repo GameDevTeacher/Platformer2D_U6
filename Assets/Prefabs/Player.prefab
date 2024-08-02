@@ -170,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpSpeed: 8
+  playerHealth: 0
   playerIsGrounded: 0
   whatIsGround:
     serializedVersion: 2
