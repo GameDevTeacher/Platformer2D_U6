@@ -170,11 +170,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpSpeed: 8
+  playerHealth: 3
   playerIsGrounded: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
   groundBoxSize: {x: 0.8, y: 0.2}
+  damageCooldown: 1
 --- !u!114 &7722693899076757286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +192,7 @@ MonoBehaviour:
   Horizontal: 0
   Jump: 0
   Attack: 0
-  Interact: 0
+  Interact: 1
 --- !u!1 &4245566814304132164
 GameObject:
   m_ObjectHideFlags: 0

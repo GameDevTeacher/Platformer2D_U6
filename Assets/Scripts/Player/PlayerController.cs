@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,9 @@ public class PlayerController : MonoBehaviour
     public bool playerIsGrounded;
     public LayerMask whatIsGround;
     public Vector2 groundBoxSize = new Vector2(0.8f,0.2f);
+
+    public float damageCooldown;
+    private float _damageCoolDownTimer;
     
     private InputActions _input;
     private Rigidbody2D _rigidbody2D;
@@ -33,12 +37,6 @@ public class PlayerController : MonoBehaviour
         Attack();
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position, groundBoxSize);
-    }
-
     private void FixedUpdate()
     {
         _rigidbody2D.linearVelocityX = _input.Horizontal * moveSpeed;
@@ -48,8 +46,27 @@ public class PlayerController : MonoBehaviour
     {
         if (other.transform.CompareTag("Death"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            RestartScene();
         }
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.transform.CompareTag("Enemy"))
+        {
+            TakeDamage();
+        }
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(transform.position, groundBoxSize);
+    }
+
+    private static void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void Attack()
@@ -64,4 +81,19 @@ public class PlayerController : MonoBehaviour
         }
         _rigidbody2D.linearVelocityY = jumpSpeed/1.3f;
     }
+
+    private void TakeDamage()
+    {
+        if (Time.time > _damageCoolDownTimer)
+        {
+            playerHealth -= 1;
+            _damageCoolDownTimer = Time.time + damageCooldown;
+        }
+
+        if (playerHealth <= 0)
+        {
+            RestartScene();
+        }
+    }
+    
 }
