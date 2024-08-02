@@ -5,9 +5,6 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpSpeed = 7f;
-
-
-    public int playerHealth;
     
     public bool playerIsGrounded;
     public LayerMask whatIsGround;
@@ -30,6 +27,8 @@ public class PlayerController : MonoBehaviour
         {
             _rigidbody2D.linearVelocityY = jumpSpeed;
         }
+
+        Attack();
     }
 
     private void OnDrawGizmos()
@@ -49,5 +48,18 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+    }
+
+    private void Attack()
+    {
+        if (!Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Enemy"))) return;
+
+        var enemyColliders = Physics2D.OverlapCircleAll(transform.position, 0.2f, LayerMask.GetMask("Enemy"));
+
+        foreach (var enemy in enemyColliders)
+        {
+            Destroy(enemy.gameObject); 
+        }
+        _rigidbody2D.linearVelocity = new Vector2(_rigidbody2D.linearVelocity.x, jumpSpeed/1.3f);
     }
 }
