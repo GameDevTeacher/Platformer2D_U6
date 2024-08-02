@@ -62,6 +62,6 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(enemy.gameObject); 
         }
-        _rigidbody2D.linearVelocity = new Vector2(_rigidbody2D.linearVelocity.x, jumpSpeed/1.3f);
+        _rigidbody2D.linearVelocityY = jumpSpeed/1.3f;
     }
 }
