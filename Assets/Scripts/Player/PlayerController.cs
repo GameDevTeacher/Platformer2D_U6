@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         playerIsGrounded = Physics2D.OverlapBox(transform.position, groundBoxSize, 0f, whatIsGround);
-        //playerIsGrounded = Physics2D.OverlapCircle(transform.position, 0.2f, whatIsGround);
         
         if (_input.Jump && playerIsGrounded)
         {
@@ -40,11 +39,10 @@ public class PlayerController : MonoBehaviour
     {
         _rigidbody2D.linearVelocityX = _input.Horizontal * moveSpeed;
     }
-    
-    // Death & Collision
-    private void OnTriggerEnter2D(Collider2D other)
+
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("Death"))
+        if (other.transform.CompareTag("Death"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }

@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
-    public float moveSpeed = 2f;
+    public float moveSpeed;
     
     public Transform target;
-    public float sightRadius = 4f;
+    public float sightRange;
     public bool canChase;
-    
+
     private Vector2 _moveDirection;
     private Rigidbody2D _rigidbody2D;
     
@@ -21,9 +21,15 @@ public class EnemyFollow : MonoBehaviour
 
         _moveDirection = target.position - transform.position;
         
-        if (Vector3.Distance(target.position, transform.position) < sightRadius)
+        if (Vector2.Distance(target.position, transform.position) < sightRange)
         {
             canChase = true;
+        }
+
+        if (transform.position.x > target.position.x)
+        {
+            transform.localScale = transform.position.x > target.position.x ? 
+                new Vector2(1, 1) : new Vector2(-1, 1);
         }
     }
 
@@ -33,5 +39,11 @@ public class EnemyFollow : MonoBehaviour
         {
             _rigidbody2D.linearVelocity = _moveDirection * moveSpeed;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;                                
+        Gizmos.DrawWireSphere(transform.position, sightRange);    
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    public float moveSpeed = 2f;
+    public float moveSpeed;
    
     public LayerMask whatIsWall;
     public Transform wallCheck;
@@ -33,5 +33,12 @@ public class EnemyPatrol : MonoBehaviour
     {
         return Physics2D.OverlapCircle(wallCheck.position, 0.1f, whatIsWall) 
                || !Physics2D.OverlapCircle(fallCheck.position, 0.1f);
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(wallCheck.position, 0.1f);
+        Gizmos.DrawWireSphere(fallCheck.position, 0.1f);
     }
 }

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1547826685956180960}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0, z: 0}
+  m_LocalPosition: {x: -0.5, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41,12 +41,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2201335545144040204}
   - component: {fileID: 8449816509454851589}
+  - component: {fileID: 7882381374545975506}
   - component: {fileID: 6631006467954780663}
   - component: {fileID: 7661000717137823081}
-  - component: {fileID: 7882381374545975506}
   m_Layer: 0
   m_Name: JumpEnemy
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,6 +123,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7882381374545975506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4854104703189340138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 698fc453ccdc747df8c7187fecbf2007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  jumpSpeed: 4
+  sightRange: 6
+  canJump: 0
+  enemyIsOnGround: 0
+  wallCheck: {fileID: 9014342958792775440}
+  groundCheck: {fileID: 201204452462403260}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  whatIsBounceable:
+    serializedVersion: 2
+    m_Bits: 72
 --- !u!50 &6631006467954780663
 Rigidbody2D:
   serializedVersion: 5
@@ -200,29 +225,6 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
---- !u!114 &7882381374545975506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4854104703189340138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 698fc453ccdc747df8c7187fecbf2007, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
-  jumpSpeed: 4
-  target: {fileID: 0}
-  sightRadius: 4
-  canJump: 0
-  enemyIsOnGround: 0
-  wallCheck: {fileID: 9014342958792775440}
-  groundCheck: {fileID: 201204452462403260}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!1 &8411086191112027631
 GameObject:
   m_ObjectHideFlags: 0
