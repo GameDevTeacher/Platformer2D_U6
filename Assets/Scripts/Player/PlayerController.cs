@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpSpeed = 7f;
 
-
     public int playerHealth;
     
     public bool playerIsGrounded;
