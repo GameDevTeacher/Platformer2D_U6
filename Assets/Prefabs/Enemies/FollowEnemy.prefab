@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5464177829698680865}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,9 +44,9 @@ GameObject:
   - component: {fileID: 6520812256119048862}
   - component: {fileID: 5514665073062394051}
   - component: {fileID: 7286610461641893143}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FollowEnemy
-  m_TagString: Death
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   target: {fileID: 0}
-  sightRange: 5
+  sightRange: 6
   canChase: 0
 --- !u!50 &5514665073062394051
 Rigidbody2D:

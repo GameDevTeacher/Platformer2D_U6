@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3366774760533190264}
   - component: {fileID: 6779254410388813262}
   - component: {fileID: 4222466566929866997}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PatrolEnemy
-  m_TagString: Death
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,7 +192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 980402265755162916}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7853103638806948516}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

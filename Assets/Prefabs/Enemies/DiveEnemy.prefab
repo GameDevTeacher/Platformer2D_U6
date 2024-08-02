@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5517095466709122175}
   - component: {fileID: 4288862270817268176}
   - component: {fileID: 5130375634618069864}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DiveEnemy
-  m_TagString: Death
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
