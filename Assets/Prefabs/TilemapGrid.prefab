@@ -35252,7 +35252,7 @@ GameObject:
   - component: {fileID: 8781674216700519374}
   - component: {fileID: 2340955139927727705}
   m_Layer: 3
-  m_Name: Ground
+  m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
