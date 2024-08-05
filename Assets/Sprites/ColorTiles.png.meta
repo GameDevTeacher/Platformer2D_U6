@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b2376f63ba76b4407b3d52b1a0af4c87
+guid: 7ae5ce30dfb4c4613a7ad1a5ae020753
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5970135517838781546
-    second: ColorTiles_0
+      213: 1777735203382843911
+    second: ColorTiles 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ColorTiles_0
+      name: ColorTiles 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,14 +115,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a6c29b15f9e2ad250800000000000000
-      internalID: 5970135517838781546
+      spriteID: 70a5756afb8cba810800000000000000
+      internalID: 1777735203382843911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ColorTiles_1
+      name: ColorTiles 1_1
       rect:
         serializedVersion: 2
         x: 32
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e55faa0946cff4f0fba1c75c1dda8c5d
-      internalID: 661659792
+      spriteID: c1d07cb3e82694bffa8e8710741de2e6
+      internalID: 840204054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ColorTiles_2
+      name: ColorTiles 1_2
       rect:
         serializedVersion: 2
         x: 64
@@ -159,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8121878b5f2642848528d13f043e665
-      internalID: -171126628
+      spriteID: 3c6eda171d1f343238a51917e02af842
+      internalID: -412506089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ColorTiles_3
+      name: ColorTiles 1_3
       rect:
         serializedVersion: 2
         x: 96
@@ -181,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7733e44ad21f4940a1d9afcdbe8f358
-      internalID: 1073382529
+      spriteID: 8ef062c77208841b6891f5555b84c176
+      internalID: -41309484
       vertices: []
       indices: 
       edges: []
@@ -191,7 +191,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 70d6e985cedb1404ca173a1022284266
+    spriteID: 321849c52a03a441888dd0b16176b8df
     internalID: 0
     vertices: []
     indices: 
@@ -201,10 +201,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ColorTiles_0: 5970135517838781546
-      ColorTiles_1: 661659792
-      ColorTiles_2: -171126628
-      ColorTiles_3: 1073382529
+      ColorTiles 1_0: 1777735203382843911
+      ColorTiles 1_1: 840204054
+      ColorTiles 1_2: -412506089
+      ColorTiles 1_3: -41309484
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
