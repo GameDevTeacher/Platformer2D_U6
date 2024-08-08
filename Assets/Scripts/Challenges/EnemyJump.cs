@@ -20,23 +20,34 @@ public class EnemyJump : MonoBehaviour
     private Transform target;
     private Vector2 _moveDirection;
     private Rigidbody2D _rigidbody2D;
+    private Animator _animator;
     
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         target = GameObject.Find("Player").transform;
+        _animator = GetComponent<Animator>();
     }
     
     private void Update()
     {
         enemyIsOnGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, whatIsGround);
+
+        if (enemyIsOnGround)
+        {
+            _animator.Play("Spider_Idle");
+        }
+        else
+        {
+            _animator.Play("Spider_Jump");
+        }
         
         
         if (target != null)
         {
             _moveDirection = target.position - transform.position;
             
-            if (enemyIsOnGround && transform.position.x > target.position.x)
+            if (enemyIsOnGround)
             {
                 transform.localScale = transform.position.x > target.position.x ? 
                     new Vector2(1, 1) : new Vector2(-1, 1);

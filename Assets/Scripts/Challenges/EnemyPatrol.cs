@@ -9,14 +9,18 @@ public class EnemyPatrol : MonoBehaviour
     public Transform fallCheck;
     
     private Rigidbody2D _rigidbody2D;
+    private Animator _animator;
 
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
+        _animator.Play("Snake_Move");
     }
 
     private void Update()
     {
+        
         if (DetectedWallOrFall())
         {
             moveSpeed *= -1;

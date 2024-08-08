@@ -10,10 +10,13 @@ public class EnemyFollow : MonoBehaviour
 
     private Vector2 _moveDirection;
     private Rigidbody2D _rigidbody2D;
+    private Animator _animator;
     
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
+        _animator.Play("Bat_Idle");
     }
     private void Update()
     {
@@ -24,13 +27,11 @@ public class EnemyFollow : MonoBehaviour
         if (Vector2.Distance(target.position, transform.position) < sightRange)
         {
             canChase = true;
+            _animator.Play("Bat_Fly");
         }
 
-        if (transform.position.x > target.position.x)
-        {
-            transform.localScale = transform.position.x > target.position.x ? 
-                new Vector2(1, 1) : new Vector2(-1, 1);
-        }
+        transform.localScale = transform.position.x < target.position.x ? 
+            new Vector2(1, 1) : new Vector2(-1, 1);
     }
 
     private void FixedUpdate()

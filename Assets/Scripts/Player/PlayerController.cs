@@ -15,7 +15,8 @@ public class PlayerController : MonoBehaviour
 
     public float damageCooldown;
     private float _damageCoolDownTimer;
-    
+
+    private Animator _animator;
     private InputActions _input;
     private Rigidbody2D _rigidbody2D;
 
@@ -23,17 +24,19 @@ public class PlayerController : MonoBehaviour
     {
         _input = GetComponent<InputActions>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
         playerIsGrounded = Physics2D.OverlapBox(transform.position, groundBoxSize, 0f, whatIsGround);
         
+        
         if (_input.Jump && playerIsGrounded)
         {
             _rigidbody2D.linearVelocityY = jumpSpeed;
         }
-
+        UpdateAnimation();
         Attack();
     }
 
@@ -93,6 +96,41 @@ public class PlayerController : MonoBehaviour
         if (playerHealth <= 0)
         {
             RestartScene();
+        }
+    }
+
+    private void UpdateAnimation()
+    {
+
+        if (_input.Horizontal != 0)
+        {
+            transform.localScale = new Vector2(
+                Mathf.Sign(_input.Horizontal), 
+                1f);
+        }
+       
+        
+        if (playerIsGrounded)
+        {
+            if (_input.Horizontal != 0)
+            {
+                _animator.Play("Player_Walk");
+            }
+            else
+            {
+                _animator.Play("Player_Idle");
+            }
+        }
+        else
+        {
+            if (_rigidbody2D.linearVelocityY > 0)
+            {
+                _animator.Play("Player_Jump");
+            }
+            else
+            {
+                _animator.Play("Player_Fall");
+            }
         }
     }
     
