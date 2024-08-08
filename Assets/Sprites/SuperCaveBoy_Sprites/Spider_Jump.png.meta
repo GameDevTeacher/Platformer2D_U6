@@ -115,12 +115,12 @@ TextureImporter:
       name: Spider_Jump_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 31
-        height: 29
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -137,12 +137,12 @@ TextureImporter:
       name: Spider_Jump_1
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 0
-        width: 31
-        height: 28
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,12 +159,12 @@ TextureImporter:
       name: Spider_Jump_2
       rect:
         serializedVersion: 2
-        x: 66
+        x: 64
         y: 0
-        width: 29
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: Spider_Jump_3
       rect:
         serializedVersion: 2
-        x: 97
+        x: 96
         y: 0
-        width: 31
-        height: 29
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -203,20 +203,20 @@ TextureImporter:
       name: Spider_Jump_4
       rect:
         serializedVersion: 2
-        x: 131
+        x: 128
         y: 0
-        width: 29
+        width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 79e514740b64c5020800000000000000
-      internalID: 2331816429994729111
+      spriteID: 47efac17d25df4086b7957526e207720
+      internalID: 1179433537
       vertices: []
       indices: 
       edges: []
@@ -225,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f10a375123a0442bdb222313bfd58765
     internalID: 0
     vertices: []
     indices: 
@@ -239,7 +239,7 @@ TextureImporter:
       Spider_Jump_1: 128211964939663424
       Spider_Jump_2: 7340060332307012229
       Spider_Jump_3: -4699518433349381873
-      Spider_Jump_4: 2331816429994729111
+      Spider_Jump_4: 1179433537
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

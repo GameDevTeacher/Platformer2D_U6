@@ -131,10 +131,10 @@ TextureImporter:
       name: Blood_1
       rect:
         serializedVersion: 2
-        x: 9
-        y: 1
-        width: 6
-        height: 6
+        x: 8
+        y: 0
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: Blood_2
       rect:
         serializedVersion: 2
-        x: 17
-        y: 1
-        width: 13
-        height: 6
+        x: 16
+        y: 0
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,11 +171,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Blood_3
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc888edc26bb24123934b5be9c5bf25f
+      internalID: -568539857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9c3e332dc1a5a45878bb05fa6cd6ffa3
     internalID: 0
     vertices: []
     indices: 
@@ -188,6 +210,7 @@ TextureImporter:
       Blood_0: 5684327315910396547
       Blood_1: -1189345562256101844
       Blood_2: 5722333315871558701
+      Blood_3: -568539857
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
