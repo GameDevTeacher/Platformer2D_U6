@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float jumpSpeed = 7f;
     
     public bool playerIsGrounded;
+    public Transform groundCheck;
     public LayerMask whatIsGround;
     public Vector2 groundBoxSize = new Vector2(0.8f,0.2f);
     
@@ -21,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        playerIsGrounded = Physics2D.OverlapBox(transform.position, groundBoxSize, 0f, whatIsGround);
+        playerIsGrounded = Physics2D.OverlapBox(groundCheck.position, groundBoxSize, 0f, whatIsGround);
         
         if (_input.Jump && playerIsGrounded)
         {
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position, groundBoxSize);
+        Gizmos.DrawWireCube(groundCheck.position, groundBoxSize);
     }
 
     private void FixedUpdate()
@@ -52,9 +53,9 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
-        if (!Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Enemy"))) return;
+        if (!Physics2D.OverlapCircle(groundCheck.position, 0.2f, LayerMask.GetMask("Enemy"))) return;
 
-        var enemyColliders = Physics2D.OverlapCircleAll(transform.position, 0.2f, LayerMask.GetMask("Enemy"));
+        var enemyColliders = Physics2D.OverlapCircleAll(groundCheck.position, 0.2f, LayerMask.GetMask("Enemy"));
 
         foreach (var enemy in enemyColliders)
         {
