@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position, groundBoxSize);
+        Gizmos.DrawWireCube(groundCheck.position, groundBoxSize);
     }
 
     private void FixedUpdate()
