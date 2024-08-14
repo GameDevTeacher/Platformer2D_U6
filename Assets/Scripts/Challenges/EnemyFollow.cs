@@ -26,11 +26,8 @@ public class EnemyFollow : MonoBehaviour
             canChase = true;
         }
 
-        if (transform.position.x > target.position.x)
-        {
-            transform.localScale = transform.position.x > target.position.x ? 
-                new Vector2(1, 1) : new Vector2(-1, 1);
-        }
+        transform.localScale = transform.position.x > target.position.x ? 
+            new Vector2(1, 1) : new Vector2(-1, 1);
     }
 
     private void FixedUpdate()
