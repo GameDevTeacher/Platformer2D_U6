@@ -4,11 +4,11 @@ public class InputActions : MonoBehaviour
 {
     private InputSystem_Actions _inputActions;
 
-    public float Horizontal;
-    
-    public bool Jump;
-    public bool Attack;
-    public bool Interact;
+    public float Horizontal {get; private set; }
+
+    public bool Jump {get; private set; }
+    public bool Attack {get; private set; }
+    public bool Interact {get; private set; }
 
 
     private void Update()

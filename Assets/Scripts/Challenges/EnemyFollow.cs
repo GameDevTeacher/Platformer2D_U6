@@ -26,12 +26,16 @@ public class EnemyFollow : MonoBehaviour
         
         if (Vector2.Distance(target.position, transform.position) < sightRange)
         {
-            canChase = true;
-            _animator.Play("Bat_Fly");
+            var hit = Physics2D.Raycast(target.position, transform.position - target.position, 100f);
+            if (hit.collider == null) return;
+            
+            if (hit.collider.gameObject.CompareTag("Player"))
+            {
+                canChase = true;
+                _animator.Play("Bat_Fly");
+            }
         }
-
-        transform.localScale = transform.position.x < target.position.x ? 
-            new Vector2(1, 1) : new Vector2(-1, 1);
+        transform.localScale = transform.position.x < target.position.x ? new Vector2(1, 1) : new Vector2(-1, 1);
     }
 
     private void FixedUpdate()
@@ -46,5 +50,7 @@ public class EnemyFollow : MonoBehaviour
     {
         Gizmos.color = Color.cyan;                                
         Gizmos.DrawWireSphere(transform.position, sightRange);    
+        Gizmos.color = Color.cyan;  
+        Gizmos.DrawRay(transform.position, target.position - transform.position);
     }
 }
