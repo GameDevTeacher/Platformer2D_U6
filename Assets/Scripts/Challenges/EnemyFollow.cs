@@ -50,7 +50,7 @@ public class EnemyFollow : MonoBehaviour
     {
         Gizmos.color = Color.cyan;                                
         Gizmos.DrawWireSphere(transform.position, sightRange);    
-        Gizmos.color = Color.cyan;  
+        Gizmos.color = Color.yellow;  
         Gizmos.DrawRay(transform.position, target.position - transform.position);
     }
 }
