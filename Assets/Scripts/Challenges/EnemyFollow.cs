@@ -3,11 +3,11 @@ using UnityEngine;
 public class EnemyFollow : MonoBehaviour
 {
     public float moveSpeed;
-    
-    public Transform target;
+    [Space(5)]
     public float sightRange;
     public bool canChase;
-
+    private Transform target;
+   
     private Vector2 _moveDirection;
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
@@ -17,6 +17,7 @@ public class EnemyFollow : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _animator.Play("Bat_Idle");
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
     private void Update()
     {
