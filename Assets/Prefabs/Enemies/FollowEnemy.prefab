@@ -136,7 +136,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  target: {fileID: 0}
   sightRange: 6
   canChase: 0
 --- !u!50 &5514665073062394051

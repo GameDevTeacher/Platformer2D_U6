@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
@@ -51,7 +52,11 @@ public class EnemyFollow : MonoBehaviour
     {
         Gizmos.color = Color.cyan;                                
         Gizmos.DrawWireSphere(transform.position, sightRange);    
-        Gizmos.color = Color.yellow;  
-        Gizmos.DrawRay(transform.position, target.position - transform.position);
+        Gizmos.color = Color.yellow;
+        
+        if (EditorApplication.isPlaying)
+        {
+            Gizmos.DrawRay(transform.position, target.position - transform.position);
+        }
     }
 }
