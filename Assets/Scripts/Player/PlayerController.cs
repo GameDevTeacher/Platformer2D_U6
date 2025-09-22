@@ -5,20 +5,20 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpSpeed = 7f;
-
-
+    
     public int playerHealth;
     
     public bool playerIsGrounded;
     public LayerMask whatIsGround;
     public Vector2 groundBoxSize = new Vector2(0.8f,0.2f);
     
-    private InputActions _input;
+    private InputManager _input;
     private Rigidbody2D _rigidbody2D;
+    
 
     private void Start()
     {
-        _input = GetComponent<InputActions>();
+        _input = GetComponent<InputManager>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
@@ -31,13 +31,7 @@ public class PlayerController : MonoBehaviour
             _rigidbody2D.linearVelocityY = jumpSpeed;
         }
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position, groundBoxSize);
-    }
-
+    
     private void FixedUpdate()
     {
         _rigidbody2D.linearVelocityX = _input.Horizontal * moveSpeed;
@@ -49,5 +43,10 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(transform.position, groundBoxSize);
     }
 }

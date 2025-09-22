@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InputActions : MonoBehaviour
+public class InputManager : MonoBehaviour
 {
     private InputSystem_Actions _inputActions;
 
