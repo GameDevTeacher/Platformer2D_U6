@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
@@ -9,7 +10,6 @@ public class InputManager : MonoBehaviour
     public bool Jump;
     public bool Attack;
     public bool Interact;
-
 
     private void Update()
     {
