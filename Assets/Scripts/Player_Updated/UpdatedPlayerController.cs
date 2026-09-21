@@ -9,6 +9,7 @@ public class UpdatedPlayerController : MonoBehaviour
         // TODO: Add Max Vertical Velocity              ✓
         // TODO: Add Double Jump                        ✓
         // TODO: Add Variable Jump Height               ✓
+        // TODO: Add Jump Storing (so that if you jump just before the ground you automatically jump)
         
         [Header("Movement")]
         public float maxVelocityX = 6f;
