@@ -9,7 +9,7 @@ public class UpdatedPlayerController : MonoBehaviour
         // TODO: Add Max Vertical Velocity              ✓
         // TODO: Add Double Jump                        ✓
         // TODO: Add Variable Jump Height               ✓
-        // TODO: Add Jump Storing (so that if you jump just before the ground you automatically jump)
+        // TODO: Add Jump Storing (so that if you jump just before the ground you automatically jump) 
         
         [Header("Movement")]
         public float maxVelocityX = 6f;
@@ -33,10 +33,17 @@ public class UpdatedPlayerController : MonoBehaviour
         private bool _isCoyoteTime;
         public bool _isJumping;
 
+        [Header("Audio")]
+        public AudioClip deathSound;
+        public AudioClip[] jumpSounds;
+        public AudioClip[] hurtSounds;
+        public AudioClip[] walkSounds;
+
         [Header("Components")]
         private UpdatedInputManager _input;
         private PlayerCollision _collision;
         private Rigidbody2D _rigidbody2D;
+        private AudioSource _audioSource;
 
         // Start is called before the first frame update
         private void Start()
@@ -44,6 +51,7 @@ public class UpdatedPlayerController : MonoBehaviour
             _input = GetComponent<UpdatedInputManager>();
             _collision = GetComponent<PlayerCollision>();
             _rigidbody2D = GetComponent<Rigidbody2D>();
+            _audioSource = GetComponent<AudioSource>();
         }
         
         private void Update()
@@ -82,19 +90,32 @@ public class UpdatedPlayerController : MonoBehaviour
                 _rigidbody2D.linearVelocity = Vector2.up * jumpForce;
                 jumpTimeCounter = jumpTime;
                 _isJumping = true;
+                PlayRandomClip(jumpSounds);
             }
             else if (_input.JumpPressed && _doubleJumpValue > 0)
             {
                 _rigidbody2D.linearVelocity = Vector2.up * jumpForce;
                 _doubleJumpValue--;
-              
+                PlayRandomClip(jumpSounds);
                 /* Add this if you want Variable Jump Height in the AIR
                 jumpTimeCounter = jumpTime;
                 _isJumping = true;
                 */
             }
         }
-        
+
+        private void PlayRandomClip(AudioClip[] clips)
+        {
+            int randomSound = Random.Range(0, clips.Length);
+            _audioSource.pitch = Random.Range(0.8f, 1.2f);
+            _audioSource.PlayOneShot(clips[randomSound]);
+        }
+
+        public void WalkAudio()
+        {
+            PlayRandomClip(walkSounds);
+        }
+
         private void UpdateMovement()
         {
             // Store Rigidbody2D.Velocity in _velocity
